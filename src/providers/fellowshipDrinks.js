@@ -31,9 +31,6 @@ export const FellowshipDrinksProvider = ({ children }) => {
     return (
         <FellowshipDrinksContext.Provider value={{ fellowshipDrinks, addToFellowship, removeToFellowship }} >
             {children}
-            {console.log('filho', children)}
         </FellowshipDrinksContext.Provider>
     )
 };
-
-export default FellowshipDrinksProvider;

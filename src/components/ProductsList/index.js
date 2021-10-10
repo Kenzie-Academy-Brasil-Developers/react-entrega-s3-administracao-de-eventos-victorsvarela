@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import './style.css'
 import CardProduct from "../CardProduct";
-import { FellowshipDrinksContext } from "../../providers/fellowshipDrinks";
-import { useContext } from "react/cjs/react.development";
-import { WeddingDrinksContext } from "../../providers/weddingDrinks";
-import { GraduationDrinksContext } from "../../providers/graduationDrinks";
+import { WeddingDrinksContext } from "../../providers/weddingDrinks.js";
+import { GraduationDrinksContext } from "../../providers/graduationDrinks.js";
+import { FellowshipDrinksContext } from "../../providers/fellowshipDrinks.js";
 
 const ProductsList = ({ type }) => {
 
     const [resultApi, setResultApi] = useState([]);
 
     const { fellowshipDrinks } = useContext(FellowshipDrinksContext)
+    console.log(fellowshipDrnks)
     const { weddingDrinks } = useContext(WeddingDrinksContext)
     const { graduationDrinks } = useContext(GraduationDrinksContext)
 
@@ -27,9 +27,6 @@ const ProductsList = ({ type }) => {
 
     console.log(resultApi)
 
-    console.log('aff', weddingDrinks)
-    console.log('mds', graduationDrinks)
-
     return (
         <section>
             {type === 'fellowship' ? (
@@ -43,9 +40,11 @@ const ProductsList = ({ type }) => {
             ) : type === 'wedding' ? (
                 <>
                     <div className='grade__products' >
-                        {weddingDrinks.map((item, index) => (
-                            <CardProduct key={index} Item={item} Index={index} Type={type} />
-                        ))}
+                        {
+                            weddingDrinks.map((item, index) => (
+                                <CardProduct key={index} Item={item} Index={index} Type={type} />
+                            ))
+                        }
                     </div >
                 </>
             ) : type === 'graduation' ? (

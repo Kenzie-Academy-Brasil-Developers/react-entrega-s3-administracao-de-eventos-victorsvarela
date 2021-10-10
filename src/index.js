@@ -4,11 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { FellowshipDrinksProvider } from './providers/fellowshipDrinks';
+import { GraduationDrinksProvider } from './providers/graduationDrinks';
+import { WeddingDrinksProvider } from './providers/weddingDrinks';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <FellowshipDrinksProvider>
+        <GraduationDrinksProvider>
+          <WeddingDrinksProvider>
+            <App />
+          </WeddingDrinksProvider>
+        </GraduationDrinksProvider>
+      </FellowshipDrinksProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

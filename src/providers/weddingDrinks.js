@@ -32,5 +32,3 @@ export const WeddingDrinksProvider = ({ children }) => {
         </WeddingDrinksContext.Provider>
     )
 };
-
-export default WeddingDrinksProvider;
