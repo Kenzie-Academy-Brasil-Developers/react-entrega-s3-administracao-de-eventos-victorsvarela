@@ -26,8 +26,6 @@ export const FellowshipDrinksProvider = ({ children }) => {
         setFellowshipDrinks(newFellowship)
     }
 
-    console.log(fellowshipDrinks)
-
     return (
         <FellowshipDrinksContext.Provider value={{ fellowshipDrinks, addToFellowship, removeToFellowship }} >
             {children}

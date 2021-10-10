@@ -11,7 +11,6 @@ const ProductsList = ({ type }) => {
     const [resultApi, setResultApi] = useState([]);
 
     const { fellowshipDrinks } = useContext(FellowshipDrinksContext)
-    console.log(fellowshipDrinks)
     const { weddingDrinks } = useContext(WeddingDrinksContext)
     const { graduationDrinks } = useContext(GraduationDrinksContext)
 
@@ -24,8 +23,6 @@ const ProductsList = ({ type }) => {
     useEffect(() => {
         callAPI()
     }, [])
-
-    console.log(resultApi)
 
     return (
         <section>
