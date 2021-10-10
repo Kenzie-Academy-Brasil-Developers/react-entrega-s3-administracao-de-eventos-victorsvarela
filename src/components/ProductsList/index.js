@@ -25,6 +25,8 @@ const ProductsList = ({ type }) => {
         callAPI()
     }, [])
 
+    console.log(resultApi)
+
     console.log('aff', weddingDrinks)
     console.log('mds', graduationDrinks)
 
@@ -34,7 +36,7 @@ const ProductsList = ({ type }) => {
                 <>
                     <div className='grade__products' >
                         {fellowshipDrinks.map((item, index) => (
-                            <CardProduct Item={item} Index={index} Type={type} />
+                            <CardProduct key={index} Item={item} Index={index} Type={type} />
                         ))}
                     </div >
                 </>
@@ -42,7 +44,7 @@ const ProductsList = ({ type }) => {
                 <>
                     <div className='grade__products' >
                         {weddingDrinks.map((item, index) => (
-                            <CardProduct Item={item} Index={index} Type={type} />
+                            <CardProduct key={index} Item={item} Index={index} Type={type} />
                         ))}
                     </div >
                 </>
@@ -50,14 +52,14 @@ const ProductsList = ({ type }) => {
                 <>
                     <div className='grade__products' >
                         {graduationDrinks.map((item, index) => (
-                            <CardProduct Item={item} Index={index} Type={type} />
+                            <CardProduct key={index} Item={item} Index={index} Type={type} />
                         ))}
                     </div >
                 </>
             ) : (
                 <div className='grade__products' >
                     {resultApi.map((item, index) => (
-                        <CardProduct Item={item} Index={index} />
+                        <CardProduct key={index} Item={item} Index={index} />
                     ))}
                 </div >
 
